@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+        <title>Roogle</title>
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+    </head>
+    <body>
+        <img src="Roogle.png" alt="Roogle Logo">
+        <p>(the worlds shittiest search engine)</h>
+<table>
+    <tr>
+    <td><input type="text" id="roogle" style="width: 215px;"></td>
+    </tr>
+    <script>
+        function redirect()
+        {
+            var url=document.getElementById('roogle').value.split(" ").join("+").toLowerCase();
+            window.location = "https://www.google.com/search?q="+url
+        }
+        function luckybtn()
+        {
+            var url=document.getElementById('roogle').value.split(" ").join("+").toLowerCase();
+            window.location = "https://www.google.com/doodles/"
+        }
+        </script>
+</table>
+<Table>
+    <tr>
+        <td>
+            <button type="submit" class="button" style="width: 107.5px;" onclick="redirect()">Google Search</button>
+            <button type="submit" name="btnl" value="1" class="button" style="width: 111px;" onclick="luckybtn()">Feelin' Lucky</button>
+        </td>
+    </tr>
+</Table>
+    </body>
+</html>
