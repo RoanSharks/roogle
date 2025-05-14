@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+        <title>Roogle</title>
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+        <meta content="Roogle Search" property="og:title" />
+        <meta content="The world's shittiest search engine" property="og:description" />
+        <meta content="https://roansharks.com" property="og:url" />
+        <meta content="Roogle.png" property="og:image" />
+        <meta content="#d1fbfb" data-react-helmet="true" name="theme-color" />
+    </head>
+    <body>
+        <img src="Roogle.png" alt="Roogle Logo">
+        <p>(the world's shittiest search engine)</p>
+        <table>
+            <tr>
+                <td><input type="text" id="roogle" style="width: 215px;" onkeydown="checkEnter(event)"></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <button type="submit" class="button" style="width: 107.5px;" onclick="redirect()">Roogle Search</button>
+                    <button type="submit" name="btnl" value="1" class="button" style="width: 111px;" onclick="luckybtn()">Feelin' Lucky</button>
+                </td>
+            </tr>
+        </table>
+        
+        <script>
+            function redirect() {
+                var input = document.getElementById('roogle').value.toLowerCase();
+                var url = input.split(" ").join("+");
+
+                if (input.includes("speedtyping")) {
+                    window.location = "/speedtyping/";  // Redirect to a different directory on the same domain
+                } else if (input.includes("metal pipe")) {
+                    var audioElement = new Audio('jixaw-metal-pipe-falling-sound.mp3'); 
+                    audioElement.play();
+                } else if (input.includes("flappy bird")) {
+                    window.location = "/flappy/";  // Redirect to a different directory on the same domain
+                } else if (input.includes("minesweeper")) {
+                    window.location = "/minesweeper/";  // Redirect to a different directory on the same domain
+                } else {
+                    window.location = "https://www.google.com/search?q=" + url;
+                }
+            }
+
+            function luckybtn() {
+                var url = document.getElementById('roogle').value.split(" ").join("+").toLowerCase();
+                window.location = "https://www.google.com/doodles/";
+            }
+
+            // Detect Enter key press
+            function checkEnter(event) {
+                if (event.key === "Enter") {
+                    redirect();  // Call the search function when Enter is pressed
+                }
+            }
+        </script>
+    </body>
+</html>

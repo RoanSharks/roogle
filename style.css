@@ -1,0 +1,19 @@
+html 
+{
+    height: 100%;
+    display: table;
+    margin: auto;
+}
+
+body 
+{
+    display: table-cell;
+    background-color: rgba(117, 245, 245, 0.329);
+    vertical-align: middle;
+}
+input.submit {
+    width: 50%;
+}
+.text { 
+    size: 40;
+}
